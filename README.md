@@ -1,4 +1,4 @@
-# Cokhot
+# Cokhot 🐣
 
 A personal recipe vault
 
