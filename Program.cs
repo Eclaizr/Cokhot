@@ -1,4 +1,5 @@
 using Cokhot.Components;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+builder.Services.AddDbContext<ApplicationContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("CokhotConnection");
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
+
+builder.Services.AddScoped<IfPlatDataRepository, PlatsRepository>();
+builder.Services.AddScoped<IfIngredientDataRepository, IngredientRepository>();
+builder.Services.AddScoped<IfIngredientDansPlatDataRepository, IngredientDansPlatsRepository>();
+builder.Services.AddControllers();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,6 +31,8 @@ app.UseHttpsRedirection();
 
 
 app.UseAntiforgery();
+
+app.MapControllers();
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>()

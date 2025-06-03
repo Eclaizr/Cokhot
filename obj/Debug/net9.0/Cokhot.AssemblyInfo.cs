@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cokhot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea11447a1222ef45f4daf09eb5a25f84e36911cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cokhot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cokhot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
