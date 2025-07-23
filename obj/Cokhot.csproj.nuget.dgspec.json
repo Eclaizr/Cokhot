@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/home/lulo/projets/Cokhot/Cokhot.csproj": {}
+    "C:\\Users\\clair\\Documents\\COKHOT\\Cokhot\\Cokhot.csproj": {}
   },
   "projects": {
-    "/home/lulo/projets/Cokhot/Cokhot.csproj": {
+    "C:\\Users\\clair\\Documents\\COKHOT\\Cokhot\\Cokhot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/lulo/projets/Cokhot/Cokhot.csproj",
+        "projectUniqueName": "C:\\Users\\clair\\Documents\\COKHOT\\Cokhot\\Cokhot.csproj",
         "projectName": "Cokhot",
-        "projectPath": "/home/lulo/projets/Cokhot/Cokhot.csproj",
-        "packagesPath": "/home/lulo/.nuget/packages/",
-        "outputPath": "/home/lulo/projets/Cokhot/obj/",
+        "projectPath": "C:\\Users\\clair\\Documents\\COKHOT\\Cokhot\\Cokhot.csproj",
+        "packagesPath": "C:\\Users\\clair\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clair\\Documents\\COKHOT\\Cokhot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/lulo/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\clair\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -83,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,12 +1,81 @@
 ﻿@page "/"
 @using System.Net
-@using System.Text.Json.Serialization
 @using Newtonsoft.Json
 @using Microsoft.AspNetCore.Components.Forms
+
+<PageTitle>Cokhot - Home</PageTitle>
+
+<!-- Header section -->
+
+<div class="wrapper">
+<header>
+    <a href="#">
+        <img src="images/cokhot_logo.png" alt="Cokhot logo" class="cokhot_logo" />
+        <span class="title_header"> Cokhot </span>
+    </a>
+
+    <ul class="navbar">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Drinks</a></li>
+        <li><a href="#">Grocery List</a></li>
+    </ul>
+
+    <div class="main">
+        <a href="#" class="user"><i class="ri-user-fill"></i></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </div>
+</header>
+
+<!-- Main section -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="title">What would you like to eat on your plate?</h1>
+            <p class="description">It will take you only a few minutes!</p>
+        </div>
+    </div>
+
+    <button class="main-btn">Let's find out!</button>
+    <button class="main-btn">Add a meal</button>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="wave" style="height: 150px; overflow: hidden;">
+              <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                  <path d="M0,60 
+                      C50,100 100,20 150,60 
+                      C200,100 250,20 300,60 
+                      C350,100 400,20 450,60 
+                      C475,75 490,60 500,60 
+                      L500,150 L0,150 Z"
+                      style="stroke: none; fill: #f4d8c4;"></path>
+                </svg>
+        </div>
+    <p>&copy; 2025 Cokhot. All rights reserved.</p>
+</footer>
+
+</div>
+
+<!-- Example display of plats -->
+@if (plats != null)
+{
+    <ul>
+        @foreach (var plat in plats)
+        {
+            <li>@plat.nomPlat</li>
+        }
+    </ul>
+}
+
 
 @code {
     private readonly string getPlatsUrl = "http://localhost:5150/api/plats";
     private List<Plat>? plats;
+
+    [SupplyParameterFromForm]
+    private Plat Plat { get; set; } = new Plat { nomPlat = "" };
 
     protected override async Task OnInitializedAsync()
     {
@@ -20,150 +89,11 @@
         if (response.IsSuccessStatusCode)
         {
             var content = await response.Content.ReadAsStringAsync();
-            plats = System.Text.Json.JsonSerializer.Deserialize<List<Plat>>(content, new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            plats = System.Text.Json.JsonSerializer.Deserialize<List<Plat>>(content,
+                new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
         }
     }
-}
 
-<PageTitle>Cokhot - Home</PageTitle>
-
-<body class="bg-light text-dark">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white px-4">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="https://via.placeholder.com/40" alt="Cokhot Logo" class="rounded-circle me-2">
-            <span class="fw-bold">Cokhot</span>
-        </a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a href="#" class="nav-link">Recipes</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Preferences</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Drinks</a></li>
-            </ul>
-        </div>
-        <a href="#" class="ms-3"><img src="https://via.placeholder.com/30" alt="Profile Icon" class="rounded-circle"></a>
-    </nav>
-
-    <main class="container text-center mt-5">
-        <div class="d-flex flex-column align-items-center">
-            <img src="https://via.placeholder.com/150" alt="Cooking Chick" class="mb-4">
-            <h2 class="display-4 fw-bold">What would you like on your plate?</h2>
-            <a href="#" class="btn btn-primary mt-3">Let's find out ➔</a>
-            <p class="mt-4 fs-3 fw-semibold">100</p>
-            <p class="text-muted">registered meals</p>
-
-            @if (plats == null)
-            {
-                <p>Chargement...</p>
-            }
-            else
-            {
-                <ul>
-                    @foreach (var plat in plats)
-                    {
-                        <li>@plat.nomPlat</li>
-                    }
-                </ul>
-            }
-          
-<!-- 
-            <form action="" method="post">
-                <div>
-                    <label for="textnomPlat" class="form-label">Nom du plat</label>
-                    <input type="text" name="nomPlat" id="textnomPlat" class="form-control mb-3" placeholder="Entrez le nom du plat" required>
-                </div>
-
-                <div>
-                    <input type="radio" name="saveurPlat" value="sucré" id="radioSucre" class="form-check-input">
-                    <label for="radioSucre">Sucré</label>
-                </div>
-                <div>
-                    <input type="radio" name="saveurPlat" value="salé" id="radioSale" class="form-check-input">
-                    <label for="radioSale">Salé</label>
-                </div>
-
-                <div>
-                    <input type="checkbox" name="estEpice" id="estEpice" class="form-check-input">
-                    <label for="estEpice" class="form-check-label">Épicé</label>
-                </div>
-
-                <div>
-                    <input type="checkbox" name="estHealthy" id="estHealthy" class="form-check-input">
-                    <label for="estHealthy" class="form-check-label">Healthy</label>
-                </div>
-
-                <div>
-                    <input type="checkbox" name="estVegetarien" id="estVegetarien" class="form-check-input">
-                    <label for="estVegetarien" class="form-check-label">Végétarien</label>
-                </div>
-
-                <div>
-                    <label for="originePlat">Origine plat </label>
-                    <input type="text" name="originePlat" id="originePlat" class="form-control mb-3" placeholder="Entrez l'origine du plat">
-                    <datalist>
-                        <option value="France"></option>
-                        <option value="Italie"></option>
-                        <option value="Mexique"></option>
-                        <option value="Inde"></option>
-                        <option value="Asiatique"></option>
-                        <option value="Marocain"></option>
-                    </datalist>
-                </div>
-
-                <div>
-                    <label for="tempsPreparationPlat">Temps de préparation</label>
-                    <input type="number" name="tempsPreparationPlat" id="tempsPreparationPlat" class="form-control mb-3" placeholder="Entrez le temps de préparation en minutes">
-                </div>
-
-                <div>
-                    <input type="radio" name="repas" id="repasPetitDejeuner" class="form-check-input">
-                    <label for="repasPetitDejeuner">Petit déjeuner</label>
-                </div>
-                <div>
-                    <input type="radio" name="repas" id="repasDejeuner" class="form-check-input">
-                    <label for="repasDejeuner">Déjeuner</label>
-                </div>
-                <div>
-                    <input type="radio" name="repas" id="repasDiner" class="form-check-input">
-                    <label for="repasDiner">Diner</label>
-                </div>
-
-                <div>
-                    <label for="lienRecette">Lien de la recette</label>
-                    <input type="text" name="lienRecette" id="lienRecettePlat" class="form-control mb-3" placeholder="Entrez le lien de la recette">
-                </div>
-
-                <div>
-                    <label for="lienPhoto">Lien de la photo</label>
-                    <input type="text" name="lienPhoto" id="lienPhotoPlat" class="form-control mb-3" placeholder="Entrez le lien de la photo">
-                </div>
-
-                <div>
-                    <input type="radio" name="notePlat" id="note1" value="1" class="form-check-input">
-                    <label for="note1">1</label>
-                    <input type="radio" name="notePlat" id="note2" value="2" class="form-check-input">
-                    <label for="note2">2</label>
-                    <input type="radio" name="notePlat" id="note3" value="3" class="form-check-input">
-                    <label for="note3">3</label>
-                    <input type="radio" name="notePlat" id="note4" value="4" class="form-check-input">
-                    <label for="note4">4</label>
-                    <input type="radio" name="notePlat" id="note5" value="5" class="form-check-input">
-                    <label for="note5">5</label>
-                </div>
-
-                <button type="submit" class="btn btn-success mt-3">Ajouter le plat</button>
-                
-            </form>
--->
-        </div>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="formhandler.js"></script>
-</body>
-
-@code {
-    [SupplyParameterFromForm]
-    private Plat Plat { get; set; } = new Plat{nomPlat = ""};
     private async Task PostPlat()
     {
         using var httpClient = new HttpClient();
@@ -172,7 +102,7 @@
         if (response.IsSuccessStatusCode)
         {
             await GetPlatsAsync();
-            Plat = new Plat{nomPlat = ""}; // Reset the form
+            Plat = new Plat { nomPlat = "" };
         }
     }
 }
