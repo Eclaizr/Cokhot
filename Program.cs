@@ -17,6 +17,8 @@ builder.Services.AddScoped<IfPlatDataRepository, PlatsRepository>();
 builder.Services.AddScoped<IfIngredientDataRepository, IngredientRepository>();
 builder.Services.AddScoped<IfIngredientDansPlatDataRepository, IngredientDansPlatsRepository>();
 builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -29,7 +31,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseAntiforgery();
 
 app.MapControllers();

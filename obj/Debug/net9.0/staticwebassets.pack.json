@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
+      "Id": "/home/lulo/projets/Cokhot/wwwroot/formhandler.js",
+      "PackagePath": "staticwebassets/formhandler.js"
+    },
+    {
       "Id": "/home/lulo/projets/Cokhot/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
       "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
     },

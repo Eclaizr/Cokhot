@@ -12,32 +12,32 @@ public class ApplicationContext(DbContextOptions<ApplicationContext> options) : 
             new Plat
             {
                 IdPlat = 1,
-                NomPlat = "Spaghetti Bolognese",
-                SaveurPlat = "Savoureux",
-                EstEpicePlat = false,
-                EstHealthy = true,
-                EstVegetarien = false,
-                OriginePlat = "Italie",
-                TempsPreparationPlat = 30,
-                RepasPlat = "Dîner",
-                LienRecettePlat = "",
-                LienPhotoPlat = "",
-                NotePlat = 5
+                nomPlat = "Spaghetti Bolognese",
+                saveurPlat = "Savoureux",
+                estEpicePlat = false,
+                estHealthy = true,
+                estVegetarien = false,
+                originePlat = "Italie",
+                tempsPreparationPlat = 30,
+                repasPlat = "Dîner",
+                lienRecettePlat = "",
+                lienPhotoPlat = "",
+                notePlat = 5
             },
             new Plat
             {
                 IdPlat = 2,
-                NomPlat = "Salade César",
-                SaveurPlat = "Frais",
-                EstEpicePlat = false,
-                EstHealthy = true,
-                EstVegetarien = false,
-                OriginePlat = "États-Unis",
-                TempsPreparationPlat = 15,
-                RepasPlat = "Déjeuner",
-                LienRecettePlat = "",
-                LienPhotoPlat = "",
-                NotePlat = 4
+                nomPlat = "Salade César",
+                saveurPlat = "Frais",
+                estEpicePlat = false,
+                estHealthy = true,
+                estVegetarien = false,
+                originePlat = "États-Unis",
+                tempsPreparationPlat = 15,
+                repasPlat = "Déjeuner",
+                lienRecettePlat = "",
+                lienPhotoPlat = "",
+                notePlat = 4
             }
         );
 

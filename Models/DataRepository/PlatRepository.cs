@@ -14,17 +14,17 @@ public class PlatsRepository(ApplicationContext context) : IfPlatDataRepository
 
     public async Task UpdateAsync(Plat platToUpdate, Plat plat)
     {
-        platToUpdate.NomPlat = plat.NomPlat;
-        platToUpdate.SaveurPlat = plat.SaveurPlat;
-        platToUpdate.EstEpicePlat = plat.EstEpicePlat;
-        platToUpdate.EstHealthy = plat.EstHealthy;
-        platToUpdate.EstVegetarien = plat.EstVegetarien;
-        platToUpdate.OriginePlat = plat.OriginePlat;
-        platToUpdate.TempsPreparationPlat = plat.TempsPreparationPlat;
-        platToUpdate.RepasPlat = plat.RepasPlat;
-        platToUpdate.LienRecettePlat = plat.LienRecettePlat;
-        platToUpdate.LienPhotoPlat = plat.LienPhotoPlat;
-        platToUpdate.NotePlat = plat.NotePlat;
+        platToUpdate.nomPlat = plat.nomPlat;
+        platToUpdate.saveurPlat = plat.saveurPlat;
+        platToUpdate.estEpicePlat = plat.estEpicePlat;
+        platToUpdate.estHealthy = plat.estHealthy;
+        platToUpdate.estVegetarien = plat.estVegetarien;
+        platToUpdate.originePlat = plat.originePlat;
+        platToUpdate.tempsPreparationPlat = plat.tempsPreparationPlat;
+        platToUpdate.repasPlat = plat.repasPlat;
+        platToUpdate.lienRecettePlat = plat.lienRecettePlat;
+        platToUpdate.lienPhotoPlat = plat.lienPhotoPlat;
+        platToUpdate.notePlat = plat.notePlat;
     
         await _cokhotContext.SaveChangesAsync();
     }

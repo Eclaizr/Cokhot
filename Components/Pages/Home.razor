@@ -2,6 +2,7 @@
 @using System.Net
 @using System.Text.Json.Serialization
 @using Newtonsoft.Json
+@using Microsoft.AspNetCore.Components.Forms
 
 @code {
     private readonly string getPlatsUrl = "http://localhost:5150/api/plats";
@@ -59,20 +60,119 @@
                 <ul>
                     @foreach (var plat in plats)
                     {
-                        <li>@plat.NomPlat</li>
+                        <li>@plat.nomPlat</li>
                     }
                 </ul>
             }
+          
+<!-- 
+            <form action="" method="post">
+                <div>
+                    <label for="textnomPlat" class="form-label">Nom du plat</label>
+                    <input type="text" name="nomPlat" id="textnomPlat" class="form-control mb-3" placeholder="Entrez le nom du plat" required>
+                </div>
 
-            <EditForm  method="post">
-                <InputText id="nomPlat" class="form-control mb-3" placeholder="Entrez le nom du plat" />
+                <div>
+                    <input type="radio" name="saveurPlat" value="sucré" id="radioSucre" class="form-check-input">
+                    <label for="radioSucre">Sucré</label>
+                </div>
+                <div>
+                    <input type="radio" name="saveurPlat" value="salé" id="radioSale" class="form-check-input">
+                    <label for="radioSale">Salé</label>
+                </div>
 
-            </EditForm>
+                <div>
+                    <input type="checkbox" name="estEpice" id="estEpice" class="form-check-input">
+                    <label for="estEpice" class="form-check-label">Épicé</label>
+                </div>
 
+                <div>
+                    <input type="checkbox" name="estHealthy" id="estHealthy" class="form-check-input">
+                    <label for="estHealthy" class="form-check-label">Healthy</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="estVegetarien" id="estVegetarien" class="form-check-input">
+                    <label for="estVegetarien" class="form-check-label">Végétarien</label>
+                </div>
+
+                <div>
+                    <label for="originePlat">Origine plat </label>
+                    <input type="text" name="originePlat" id="originePlat" class="form-control mb-3" placeholder="Entrez l'origine du plat">
+                    <datalist>
+                        <option value="France"></option>
+                        <option value="Italie"></option>
+                        <option value="Mexique"></option>
+                        <option value="Inde"></option>
+                        <option value="Asiatique"></option>
+                        <option value="Marocain"></option>
+                    </datalist>
+                </div>
+
+                <div>
+                    <label for="tempsPreparationPlat">Temps de préparation</label>
+                    <input type="number" name="tempsPreparationPlat" id="tempsPreparationPlat" class="form-control mb-3" placeholder="Entrez le temps de préparation en minutes">
+                </div>
+
+                <div>
+                    <input type="radio" name="repas" id="repasPetitDejeuner" class="form-check-input">
+                    <label for="repasPetitDejeuner">Petit déjeuner</label>
+                </div>
+                <div>
+                    <input type="radio" name="repas" id="repasDejeuner" class="form-check-input">
+                    <label for="repasDejeuner">Déjeuner</label>
+                </div>
+                <div>
+                    <input type="radio" name="repas" id="repasDiner" class="form-check-input">
+                    <label for="repasDiner">Diner</label>
+                </div>
+
+                <div>
+                    <label for="lienRecette">Lien de la recette</label>
+                    <input type="text" name="lienRecette" id="lienRecettePlat" class="form-control mb-3" placeholder="Entrez le lien de la recette">
+                </div>
+
+                <div>
+                    <label for="lienPhoto">Lien de la photo</label>
+                    <input type="text" name="lienPhoto" id="lienPhotoPlat" class="form-control mb-3" placeholder="Entrez le lien de la photo">
+                </div>
+
+                <div>
+                    <input type="radio" name="notePlat" id="note1" value="1" class="form-check-input">
+                    <label for="note1">1</label>
+                    <input type="radio" name="notePlat" id="note2" value="2" class="form-check-input">
+                    <label for="note2">2</label>
+                    <input type="radio" name="notePlat" id="note3" value="3" class="form-check-input">
+                    <label for="note3">3</label>
+                    <input type="radio" name="notePlat" id="note4" value="4" class="form-check-input">
+                    <label for="note4">4</label>
+                    <input type="radio" name="notePlat" id="note5" value="5" class="form-check-input">
+                    <label for="note5">5</label>
+                </div>
+
+                <button type="submit" class="btn btn-success mt-3">Ajouter le plat</button>
+                
+            </form>
+-->
         </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="formhandler.js"></script>
 </body>
-using System.Net;
-#line default
+
+@code {
+    [SupplyParameterFromForm]
+    private Plat Plat { get; set; } = new Plat{nomPlat = ""};
+    private async Task PostPlat()
+    {
+        using var httpClient = new HttpClient();
+        var content = new StringContent(JsonConvert.SerializeObject(Plat), System.Text.Encoding.UTF8, "application/json");
+        var response = await httpClient.PostAsync(getPlatsUrl, content);
+        if (response.IsSuccessStatusCode)
+        {
+            await GetPlatsAsync();
+            Plat = new Plat{nomPlat = ""}; // Reset the form
+        }
+    }
+}

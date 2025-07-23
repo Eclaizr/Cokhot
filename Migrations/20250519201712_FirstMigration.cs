@@ -38,23 +38,23 @@ namespace Cokhot.Migrations
                 {
                     IdPlat = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    NomPlat = table.Column<string>(type: "longtext", nullable: false)
+                    nomPlat = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    SaveurPlat = table.Column<string>(type: "longtext", nullable: true)
+                    saveurPlat = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    EstEpicePlat = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    EstHealthy = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    EstVegetarien = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    OriginePlat = table.Column<string>(type: "longtext", nullable: true)
+                    estEpicePlat = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    estHealthy = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    estVegetarien = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    originePlat = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    TempsPreparationPlat = table.Column<int>(type: "int", nullable: true),
-                    RepasPlat = table.Column<string>(type: "longtext", nullable: true)
+                    tempsPreparationPlat = table.Column<int>(type: "int", nullable: true),
+                    repasPlat = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    LienRecettePlat = table.Column<string>(type: "longtext", nullable: true)
+                    lienRecettePlat = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    LienPhotoPlat = table.Column<string>(type: "longtext", nullable: true)
+                    lienPhotoPlat = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    NotePlat = table.Column<int>(type: "int", nullable: true)
+                    notePlat = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -93,7 +93,7 @@ namespace Cokhot.Migrations
 
             migrationBuilder.InsertData(
                 table: "Plats",
-                columns: new[] { "IdPlat", "EstEpicePlat", "EstHealthy", "EstVegetarien", "LienPhotoPlat", "LienRecettePlat", "NomPlat", "NotePlat", "OriginePlat", "RepasPlat", "SaveurPlat", "TempsPreparationPlat" },
+                columns: new[] { "IdPlat", "estEpicePlat", "estHealthy", "estVegetarien", "lienPhotoPlat", "lienRecettePlat", "nomPlat", "notePlat", "originePlat", "repasPlat", "saveurPlat", "tempsPreparationPlat" },
                 values: new object[,]
                 {
                     { 1, false, true, false, "", "", "Spaghetti Bolognese", 5, "Italie", "Dîner", "Savoureux", 30 },

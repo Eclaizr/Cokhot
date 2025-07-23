@@ -77,38 +77,38 @@ namespace Cokhot.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdPlat"));
 
-                    b.Property<bool>("EstEpicePlat")
+                    b.Property<bool>("estEpicePlat")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool>("EstHealthy")
+                    b.Property<bool>("estHealthy")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool>("EstVegetarien")
+                    b.Property<bool>("estVegetarien")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<string>("LienPhotoPlat")
+                    b.Property<string>("lienPhotoPlat")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("LienRecettePlat")
+                    b.Property<string>("lienRecettePlat")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("NomPlat")
+                    b.Property<string>("nomPlat")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("NotePlat")
+                    b.Property<int?>("notePlat")
                         .HasColumnType("int");
 
-                    b.Property<string>("OriginePlat")
+                    b.Property<string>("originePlat")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("RepasPlat")
+                    b.Property<string>("repasPlat")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("SaveurPlat")
+                    b.Property<string>("saveurPlat")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("TempsPreparationPlat")
+                    b.Property<int?>("tempsPreparationPlat")
                         .HasColumnType("int");
 
                     b.HasKey("IdPlat");
@@ -119,32 +119,32 @@ namespace Cokhot.Migrations
                         new
                         {
                             IdPlat = 1,
-                            EstEpicePlat = false,
-                            EstHealthy = true,
-                            EstVegetarien = false,
-                            LienPhotoPlat = "",
-                            LienRecettePlat = "",
-                            NomPlat = "Spaghetti Bolognese",
-                            NotePlat = 5,
-                            OriginePlat = "Italie",
-                            RepasPlat = "Dîner",
-                            SaveurPlat = "Savoureux",
-                            TempsPreparationPlat = 30
+                            estEpicePlat = false,
+                            estHealthy = true,
+                            estVegetarien = false,
+                            lienPhotoPlat = "",
+                            lienRecettePlat = "",
+                            nomPlat = "Spaghetti Bolognese",
+                            notePlat = 5,
+                            originePlat = "Italie",
+                            repasPlat = "Dîner",
+                            saveurPlat = "Savoureux",
+                            tempsPreparationPlat = 30
                         },
                         new
                         {
                             IdPlat = 2,
-                            EstEpicePlat = false,
-                            EstHealthy = true,
-                            EstVegetarien = false,
-                            LienPhotoPlat = "",
-                            LienRecettePlat = "",
-                            NomPlat = "Salade César",
-                            NotePlat = 4,
-                            OriginePlat = "États-Unis",
-                            RepasPlat = "Déjeuner",
-                            SaveurPlat = "Frais",
-                            TempsPreparationPlat = 15
+                            estEpicePlat = false,
+                            estHealthy = true,
+                            estVegetarien = false,
+                            lienPhotoPlat = "",
+                            lienRecettePlat = "",
+                            nomPlat = "Salade César",
+                            notePlat = 4,
+                            originePlat = "États-Unis",
+                            repasPlat = "Déjeuner",
+                            saveurPlat = "Frais",
+                            tempsPreparationPlat = 15
                         });
                 });
 

@@ -18,4 +18,9 @@
     <script src="_framework/blazor.web.js"></script>
 </body>
 
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery antiforgery
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContextAccessor
+<script>
+    window.requestVerificationToken = '@antiforgery.GetAndStoreTokens(httpContextAccessor.HttpContext).RequestToken';
+</script>
 </html>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "V5b+bo/+Zo/YJ/Mo9vsAmXmTHuTfy1OL/m94pacfnOc=",
+  "Hash": "dvnrtfLhY3k7/xvMsqpuld93aUU5FF/ZdQh38s8zo/g=",
   "Source": "Cokhot",
   "BasePath": "_content/Cokhot",
   "Mode": "Default",
@@ -668,6 +668,27 @@
       "OriginalItemSpec": "/home/lulo/projets/Cokhot/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
+      "Identity": "/home/lulo/projets/Cokhot/obj/Debug/net9.0/compressed/nbgaw797ab-0lhb4zhigl.gz",
+      "SourceId": "Cokhot",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/lulo/projets/Cokhot/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/Cokhot",
+      "RelativePath": "formhandler#[.{fingerprint=0lhb4zhigl}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/home/lulo/projets/Cokhot/wwwroot/formhandler.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "bnrzivh79l",
+      "Integrity": "t3RxTEyHcG9GH4N+WfisFuvJg43Hb+HDOyN3YriaOEI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/home/lulo/projets/Cokhot/wwwroot/formhandler.js"
+    },
+    {
       "Identity": "/home/lulo/projets/Cokhot/obj/Debug/net9.0/compressed/odvefa6qc5-jj8uyg4cgr.gz",
       "SourceId": "Cokhot",
       "SourceType": "Discovered",
@@ -1086,6 +1107,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.png"
+    },
+    {
+      "Identity": "/home/lulo/projets/Cokhot/wwwroot/formhandler.js",
+      "SourceId": "Cokhot",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/lulo/projets/Cokhot/wwwroot/",
+      "BasePath": "_content/Cokhot",
+      "RelativePath": "formhandler#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0lhb4zhigl",
+      "Integrity": "PFLIh5fNDYLDFjA9vbqTz5cIB7+g3pG80JzWNFH5AIs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/formhandler.js"
     },
     {
       "Identity": "/home/lulo/projets/Cokhot/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
@@ -2986,6 +3028,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="
+        }
+      ]
+    },
+    {
+      "Route": "formhandler.0lhb4zhigl.js",
+      "AssetFile": "/home/lulo/projets/Cokhot/obj/Debug/net9.0/compressed/nbgaw797ab-0lhb4zhigl.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002375296912"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "420"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t3RxTEyHcG9GH4N+WfisFuvJg43Hb+HDOyN3YriaOEI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 19:49:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"PFLIh5fNDYLDFjA9vbqTz5cIB7+g3pG80JzWNFH5AIs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0lhb4zhigl"
+        },
+        {
+          "Name": "label",
+          "Value": "formhandler.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PFLIh5fNDYLDFjA9vbqTz5cIB7+g3pG80JzWNFH5AIs="
+        }
+      ]
+    },
+    {
+      "Route": "formhandler.0lhb4zhigl.js",
+      "AssetFile": "/home/lulo/projets/Cokhot/wwwroot/formhandler.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1228"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PFLIh5fNDYLDFjA9vbqTz5cIB7+g3pG80JzWNFH5AIs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 19:49:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0lhb4zhigl"
+        },
+        {
+          "Name": "label",
+          "Value": "formhandler.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PFLIh5fNDYLDFjA9vbqTz5cIB7+g3pG80JzWNFH5AIs="
+        }
+      ]
+    },
+    {
+      "Route": "formhandler.0lhb4zhigl.js.gz",
+      "AssetFile": "/home/lulo/projets/Cokhot/obj/Debug/net9.0/compressed/nbgaw797ab-0lhb4zhigl.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "420"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t3RxTEyHcG9GH4N+WfisFuvJg43Hb+HDOyN3YriaOEI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 19:49:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0lhb4zhigl"
+        },
+        {
+          "Name": "label",
+          "Value": "formhandler.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-t3RxTEyHcG9GH4N+WfisFuvJg43Hb+HDOyN3YriaOEI="
+        }
+      ]
+    },
+    {
+      "Route": "formhandler.js",
+      "AssetFile": "/home/lulo/projets/Cokhot/obj/Debug/net9.0/compressed/nbgaw797ab-0lhb4zhigl.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002375296912"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "420"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t3RxTEyHcG9GH4N+WfisFuvJg43Hb+HDOyN3YriaOEI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 19:49:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"PFLIh5fNDYLDFjA9vbqTz5cIB7+g3pG80JzWNFH5AIs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PFLIh5fNDYLDFjA9vbqTz5cIB7+g3pG80JzWNFH5AIs="
+        }
+      ]
+    },
+    {
+      "Route": "formhandler.js",
+      "AssetFile": "/home/lulo/projets/Cokhot/wwwroot/formhandler.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1228"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PFLIh5fNDYLDFjA9vbqTz5cIB7+g3pG80JzWNFH5AIs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 19:49:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PFLIh5fNDYLDFjA9vbqTz5cIB7+g3pG80JzWNFH5AIs="
+        }
+      ]
+    },
+    {
+      "Route": "formhandler.js.gz",
+      "AssetFile": "/home/lulo/projets/Cokhot/obj/Debug/net9.0/compressed/nbgaw797ab-0lhb4zhigl.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "420"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t3RxTEyHcG9GH4N+WfisFuvJg43Hb+HDOyN3YriaOEI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 19:49:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-t3RxTEyHcG9GH4N+WfisFuvJg43Hb+HDOyN3YriaOEI="
         }
       ]
     },
