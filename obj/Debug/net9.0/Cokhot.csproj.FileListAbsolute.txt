@@ -315,5 +315,5 @@ C:\Users\clair\Documents\COKHOT\Cokhot\obj\Debug\net9.0\Cokhot.genruntimeconfig.
 C:\Users\clair\Documents\COKHOT\Cokhot\obj\Debug\net9.0\ref\Cokhot.dll
 C:\Users\clair\Documents\COKHOT\Cokhot\obj\Debug\net9.0\scopedcss\Components\Pages\Home.razor.rz.scp.css
 C:\Users\clair\Documents\COKHOT\Cokhot\obj\Debug\net9.0\compressed\hyqnd22u7a-sr8v537you.gz
-C:\Users\clair\Documents\COKHOT\Cokhot\obj\Debug\net9.0\compressed\4fpd1m4wap-acm0ch01k2.gz
-C:\Users\clair\Documents\COKHOT\Cokhot\obj\Debug\net9.0\compressed\w5mngfd49g-acm0ch01k2.gz
+C:\Users\clair\Documents\COKHOT\Cokhot\obj\Debug\net9.0\compressed\4fpd1m4wap-vjjd1u7bvn.gz
+C:\Users\clair\Documents\COKHOT\Cokhot\obj\Debug\net9.0\compressed\w5mngfd49g-vjjd1u7bvn.gz
