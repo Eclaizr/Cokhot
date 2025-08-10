@@ -1,0 +1,22 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Cache & compression
+*.gz
+
+# Assemblies & debug
+*.dll
+*.pdb
+
+# Static web assets caches
+*.cache
+*.json.cache
+
+# Logs
+*.log
