@@ -1,7 +1,155 @@
 ﻿@page "/"
+@using System.Net
+@using Newtonsoft.Json
+@using Microsoft.AspNetCore.Components.Forms
+@page "/dashboard"
+@using Microsoft.EntityFrameworkCore
+@inject ApplicationContext Db
+<PageTitle>Cokhot - Home</PageTitle>
 
-<PageTitle>Home</PageTitle>
+<!-- Header section -->
 
-<h1>Hello, world!</h1>
+<div class="wrapper">
+<header>
+    <a href="#">
+        <img src="images/cokhot_logo.png" alt="Cokhot logo" class="cokhot_logo" />
+        <span class="title_header"> Cokhot </span>
+    </a>
 
-Welcome to your new app.
+    <ul class="navbar">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Drinks</a></li>
+        <li><a href="#">Grocery List</a></li>
+    </ul>
+
+    <div class="main">
+        <a href="#" class="user"><i class="ri-user-fill"></i></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </div>
+</header>
+
+<!-- Main section -->
+<div class="container">
+     <section class="hero-section">
+            <div class="hero-illustration">
+                <div class="chick-container">
+                    <div class="chick-image">
+                        🐣 Image de poussin ici 
+                        <br><small>(350x350px)</small>
+                    </div>
+                    <div class="ingredients">
+                        <div class="ingredient"></div>
+                        <div class="ingredient"></div>
+                        <div class="ingredient"></div>
+                        <div class="ingredient"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">What would you like on your plate?</h1>
+                <p class="hero-subtitle">If you got a few minutes ...</p>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary">
+                        Let's find out ! 
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                    <button class="btn btn-secondary">
+                        Add a new meal 
+                        <i class="ri-add-line"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features description -->
+        <section class="features-section">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="ri-restaurant-line feature-icon"></i>
+                    <h3 class="feature-title">Découvrir des Recettes</h3>
+                    <p class="feature-description">Explorez des milliers de recettes adaptées à vos goûts et à votre niveau de cuisine.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="ri-drink-line feature-icon"></i>
+                    <h3 class="feature-title">Cocktails & Boissons</h3>
+                    <p class="feature-description">Créez des boissons parfaites pour accompagner vos repas et impressionner vos invités.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="ri-shopping-cart-line feature-icon"></i>
+                    <h3 class="feature-title">Liste de Courses</h3>
+                    <p class="feature-description">Organisez vos achats facilement avec des listes générées automatiquement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Suggestions -->
+        <section class="suggestions-section">
+            <div class="suggestions-header">
+                <div class="meals-counter">
+                    <span class="counter-number" id="mealsCount">@mealsCount</span>
+                    <span class="counter-label">registered meals</span>
+                </div>
+            </div>
+        </section>
+</div>
+
+<!-- wave shape -->
+<div class="wave" style="height: 150px; overflow: hidden;">
+              <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                  <path d="M0,60 
+                      C50,100 100,20 150,60 
+                      C200,100 250,20 300,60 
+                      C350,100 400,20 450,60 
+                      C475,75 490,60 500,60 
+                      L500,150 L0,150 Z"
+                      style="stroke: none; fill: #f4d8c4;"></path>
+                </svg>
+        </div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025 Cokhot. All rights reserved.</p>
+</footer>
+
+</div>
+
+@code {
+    private readonly string getPlatsUrl = "http://localhost:5150/api/plats";
+    private List<Plat>? plats;
+    int mealsCount;
+    [SupplyParameterFromForm]
+    private Plat Plat { get; set; } = new Plat { nomPlat = "" };
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetPlatsAsync();
+        mealsCount = await Db.Plats.CountAsync();
+    }
+
+    private async Task GetPlatsAsync()
+    {
+        using var httpClient = new HttpClient();
+        var response = await httpClient.GetAsync(getPlatsUrl);
+        if (response.IsSuccessStatusCode)
+        {
+            var content = await response.Content.ReadAsStringAsync();
+            plats = System.Text.Json.JsonSerializer.Deserialize<List<Plat>>(content,
+                new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+    }
+
+    private async Task PostPlat()
+    {
+        using var httpClient = new HttpClient();
+        var content = new StringContent(JsonConvert.SerializeObject(Plat), System.Text.Encoding.UTF8, "application/json");
+        var response = await httpClient.PostAsync(getPlatsUrl, content);
+        if (response.IsSuccessStatusCode)
+        {
+            await GetPlatsAsync();
+            Plat = new Plat { nomPlat = "" };
+        }
+    }
+}
