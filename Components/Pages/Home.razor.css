@@ -74,7 +74,7 @@ header{
 
 .title_header{
     font-family: 'Imperial Script', cursive;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 600;
     color: #000; /* black */
 }
@@ -479,7 +479,6 @@ a:visited{
 .wave {
     height: 150px;
     overflow: hidden;
-    margin-top: 80px;
 }
 .wave svg {
     height: 100%;
