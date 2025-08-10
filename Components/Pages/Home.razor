@@ -2,7 +2,9 @@
 @using System.Net
 @using Newtonsoft.Json
 @using Microsoft.AspNetCore.Components.Forms
-
+@page "/dashboard"
+@using Microsoft.EntityFrameworkCore
+@inject ApplicationContext Db
 <PageTitle>Cokhot - Home</PageTitle>
 
 <!-- Header section -->
@@ -87,7 +89,7 @@
         <section class="suggestions-section">
             <div class="suggestions-header">
                 <div class="meals-counter">
-                    <span class="counter-number" id="mealsCount">100</span>
+                    <span class="counter-number" id="mealsCount">@mealsCount</span>
                     <span class="counter-label">registered meals</span>
                 </div>
             </div>
@@ -114,28 +116,17 @@
 
 </div>
 
-<!-- Example display of plats -->
-@if (plats != null)
-{
-    <ul>
-        @foreach (var plat in plats)
-        {
-            <li>@plat.nomPlat</li>
-        }
-    </ul>
-}
-
-
 @code {
     private readonly string getPlatsUrl = "http://localhost:5150/api/plats";
     private List<Plat>? plats;
-
+    int mealsCount;
     [SupplyParameterFromForm]
     private Plat Plat { get; set; } = new Plat { nomPlat = "" };
 
     protected override async Task OnInitializedAsync()
     {
         await GetPlatsAsync();
+        mealsCount = await Db.Plats.CountAsync();
     }
 
     private async Task GetPlatsAsync()

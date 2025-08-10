@@ -14,7 +14,6 @@ function animateChick() {
     }, 300);
 }
 
-
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -36,24 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.6s ease';
         observer.observe(el);
     });
-    animateCounter();
 });
-
-// Counter animation
-function animateCounter() {
-    const counter = document.getElementById('mealsCount');
-    const targetValue = 100;
-    let currentValue = 0;
-    const increment = targetValue / 50;
-    const timer = setInterval(() => {
-        currentValue += increment;
-        if (currentValue >= targetValue) {
-            currentValue = targetValue;
-            clearInterval(timer);
-        }
-        counter.textContent = Math.floor(currentValue);
-    }, 40);
-}
 
 // Parallax effect
 window.addEventListener('scroll', () => {
@@ -64,3 +46,20 @@ window.addEventListener('scroll', () => {
         ingredient.style.transform += ` translateY(${scrolled * speed}px)`;
     });
 });
+
+// Counter animation
+window.animateCounter = function (targetValue) {
+    const counter = document.getElementById('mealsCount');
+    if (!counter) return;
+
+    let currentValue = 0;
+    const increment = targetValue / 50;
+    const timer = setInterval(() => {
+        currentValue += increment;
+        if (currentValue >= targetValue) {
+            currentValue = targetValue;
+            clearInterval(timer);
+        }
+        counter.textContent = Math.floor(currentValue);
+    }, 40);
+};

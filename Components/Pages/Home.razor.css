@@ -182,18 +182,22 @@ a:visited{
 .hero-section {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 16px;
     margin-bottom: 80px;
     animation: fadeInUp 1s ease-out;
+    position: relative;
 }
 
 .hero-illustration {
-    flex: 1;
+    flex: 0.6 350px;
     text-align: center;
     position: relative;
 }
 
 .hero-content {
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0;
     animation: fadeInRight 1s ease-out 0.3s both;
 }
 
@@ -219,6 +223,8 @@ a:visited{
 
 .chick-container {
     position: relative;
+    inset: 0;
+    pointer-events: none;
     display: inline-block;
 }
 
